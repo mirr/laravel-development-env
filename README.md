@@ -8,7 +8,7 @@ This based on [php:7.4-fpm](https://hub.docker.com/_/php) but with additional ap
 * NodeJS 14.x LTS
 * cURL
 * git
-* composer
+* composer 2.x
 
 ## PHP Extensions
 * imagick
@@ -18,6 +18,14 @@ This based on [php:7.4-fpm](https://hub.docker.com/_/php) but with additional ap
 * xml
 * gd
 * zip
+
+## Globally installed packages
+* phpunit/phpunit
+* phing/phing
+* sebastian/phpcpd
+* phploc/phploc
+* phpmd/phpmd
+* squizlabs/php_codesniffer
 
 ## How to build the image
 ```

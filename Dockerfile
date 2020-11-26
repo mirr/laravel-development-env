@@ -38,6 +38,16 @@ RUN docker-php-ext-enable imagick \
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer global require phpunit/phpunit \
+    phing/phing \
+    # phpunit/dbunit \
+    # phpdocumentor/phpdocumentor \
+    sebastian/phpcpd \
+    phploc/phploc \
+    phpmd/phpmd \
+    squizlabs/php_codesniffer
+RUN echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >>~/.bash_profile;cat ~/.bash_profile 
+RUN composer global update
 
 # Install NodeJS (LTS)
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
